@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "strict": true,
+        "jsx": "preserve",
+        "importHelpers": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "types": ["webpack-env"],
+        "paths": {
+            "@/*": ["src/*"],
+            "@shared/*": ["src/shared/*"],
+            "@auth/*": ["src/modules/auth/*"],
+            "@common/*": ["src/modules/common/*"],
+            "@users/*": ["src/modules/users/*"],
+            "@messages/*": ["src/modules/messages/*"],
+            "@reports/*": ["src/modules/reports/*"],
+            "@billing/*": ["src/modules/billing/*"],
+            "@settings/*": ["src/modules/settings/*"]
+        },
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+    "exclude": ["node_modules"]
+}

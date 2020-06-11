@@ -1,0 +1,30 @@
+@import 'variables';
+/* theme color */
+$--color-primary: $color-primary;
+$--color-success: $color-success;
+$--color-warning: $color-warning;
+$--color-danger: $color-danger;
+$--color-info: $color-main-50;
+
+$--color-text-regular: $color-main;
+$--color-text-primary: $color-main;
+$--color-text-secondary: $color-main-50;
+$--color-text-placeholder: $color-main-70;
+
+// FIXME:
+$--border-color-base: red;
+$--border-color-light: blue;
+$--border-color-lighter: green;
+$--border-color-extra-light: purple;
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import '~element-ui/packages/theme-chalk/src/index';
+
+.el-menu {
+    border-color: $color-main-80;
+}
+.el-submenu .el-menu-item {
+    min-width: initial;
+}

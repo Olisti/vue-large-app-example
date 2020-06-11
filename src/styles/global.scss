@@ -1,0 +1,13 @@
+@import './elements-ui.scss';
+@import './variables.scss';
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $color-main;
+}
+body * {
+    box-sizing: border-box;
+}
