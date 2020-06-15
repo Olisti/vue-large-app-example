@@ -12,7 +12,7 @@ $--color-text-secondary: $color-main-50;
 $--color-text-placeholder: $color-main-70;
 
 // FIXME:
-$--border-color-base: red;
+$--border-color-base: $color-main-50;
 $--border-color-light: blue;
 $--border-color-lighter: $color-main-70;
 $--border-color-extra-light: purple;
@@ -27,4 +27,8 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 }
 .el-submenu .el-menu-item {
     min-width: initial;
+}
+
+.el-form--label-top .el-form-item__label {
+    padding-bottom: 0;
 }

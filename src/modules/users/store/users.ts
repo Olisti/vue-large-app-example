@@ -2,6 +2,8 @@ import { Module } from 'vuex';
 import { RootState } from '@/app/store';
 import { ApiService } from '@/shared/services/api';
 
+const apiService = new ApiService();
+
 export interface User {
     id?: number;
     name: string;
@@ -11,8 +13,6 @@ export interface State {
     users: User[];
     loading: boolean;
 }
-
-const apiService = new ApiService();
 
 export default {
     namespaced: true,

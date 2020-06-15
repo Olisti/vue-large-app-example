@@ -10,7 +10,7 @@ export class ApiService {
     }
 
     async post(url: string, data: any) {
-        const response = this.isMockData ? await timeout() : await axios.post(url);
+        const response = this.isMockData ? await getMockData(url) : await axios.post(url);
         return this.isMockData ? data : response;
     }
 

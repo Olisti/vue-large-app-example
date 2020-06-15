@@ -27,13 +27,16 @@ export default class AuthCard extends Vue {
     height: 100%;
     width: 100%;
     &__card {
-        width: 400px;
+        width: 320px;
     }
     &__title {
         width: 100%;
-        margin-top: 0;
+        margin: 5px 0;
         text-align: center;
         color: $color-main-20;
+    }
+    &__content {
+        margin: 0 10px;
     }
 }
 </style>
