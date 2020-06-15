@@ -51,7 +51,7 @@ export default {
         },
         DELETE: async ({ commit, state }, id: number) => {
             commit('SET_LOADING', true);
-            await apiService.delete(`users`, id);
+            await apiService.delete(`users/${id}`);
             commit('REMOVE', id);
             commit('SET_LOADING', false);
         }
