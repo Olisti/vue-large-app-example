@@ -26,5 +26,10 @@ export default new Vuex.Store({
         ...moduleSettings,
         layout
     },
+    mutations: {
+        RESET_ALL_LOADINGS: (state: any) => {
+            Object.keys(state).map((module: string) => (state[module].loading = false));
+        }
+    },
     plugins: [createPersistedState({ paths: ['layout', 'auth'] })]
 });

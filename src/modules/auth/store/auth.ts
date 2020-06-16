@@ -46,6 +46,7 @@ export default {
         },
         LOGOUT: (state, payload) => {
             state.token = null;
+            state.loading = false;
             router.push({
                 name: 'login'
             });
