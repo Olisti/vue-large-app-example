@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from './store';
 import moduleAuth from '@auth/router';
 import moduleCommon from '@common/router';
 import moduleUsers from '@users/router';
@@ -30,11 +31,10 @@ const router = new VueRouter({
     ]
 });
 
-// TODO: сделать перехватчик логина
-// router.beforeEach((to, from, next) => {
-//     console.log('beforeEach', to, from);
-//     if (from.name === to.name) return;
-//     else next();
-// });
+router.beforeEach((to, from, next) => {
+    const token = store.getters['auth/TOKEN'];
+    if (!to.meta.isPublic && !token) next({ name: 'login' });
+    else next();
+});
 
 export default router;
