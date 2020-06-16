@@ -14,12 +14,7 @@
             <el-form-item label="Password" prop="password">
                 <el-input v-model="form.password" type="password" autocomplete="off"></el-input>
             </el-form-item>
-            <el-button
-                class="auth__submit"
-                type="primary"
-                :loading="loading"
-                @click="submitForm()"
-            >Login</el-button>
+            <el-button class="auth__submit" type="primary" :loading="loading" @click="submitForm()">Login</el-button>
             <div class="auth__links">
                 <router-link to="/register" class="ol-link">Register</router-link>
                 <router-link to="/recovery" class="ol-link">Forgot password?</router-link>
@@ -66,17 +61,4 @@ export default class Login extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
-.auth {
-    &__submit {
-        width: 100%;
-        margin: 10px 0;
-    }
-    &__links {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px 0;
-        font-size: 14px;
-    }
-}
-</style>
+<style scoped lang="scss"></style>

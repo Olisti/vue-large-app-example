@@ -1,7 +1,7 @@
 <template>
     <div class="auth">
         <el-card class="auth__card" shadow="always">
-            <h2 class="auth__title">{{title}}</h2>
+            <h2 class="auth__title">{{ title }}</h2>
             <div class="auth__content">
                 <slot />
             </div>
@@ -37,6 +37,20 @@ export default class AuthCard extends Vue {
     }
     &__content {
         margin: 0 10px;
+    }
+}
+</style>
+<style lang="scss">
+.auth {
+    &__submit {
+        width: 100%;
+        margin: 10px 0;
+    }
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+        font-size: 14px;
     }
 }
 </style>
