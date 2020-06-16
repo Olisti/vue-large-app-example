@@ -11,3 +11,11 @@ body {
 body * {
     box-sizing: border-box;
 }
+
+.ol-link {
+    color: $color-primary;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}

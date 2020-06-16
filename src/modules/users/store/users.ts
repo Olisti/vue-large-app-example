@@ -2,6 +2,8 @@ import { Module } from 'vuex';
 import { RootState } from '@/app/store';
 import { ApiService } from '@/shared/services/api';
 
+const apiService = new ApiService();
+
 export interface User {
     id?: number;
     name: string;
@@ -11,8 +13,6 @@ export interface State {
     users: User[];
     loading: boolean;
 }
-
-const apiService = new ApiService();
 
 export default {
     namespaced: true,
@@ -51,7 +51,7 @@ export default {
         },
         DELETE: async ({ commit, state }, id: number) => {
             commit('SET_LOADING', true);
-            await apiService.delete(`users`, id);
+            await apiService.delete(`users/${id}`);
             commit('REMOVE', id);
             commit('SET_LOADING', false);
         }

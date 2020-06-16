@@ -1,8 +1,8 @@
 <template>
     <header>
-        <span>Navigation</span>
+        <span>{{ navigation }}</span>
         <span style="flex: 1" />
-        <router-link to="/login">login</router-link>
+        <router-link to="/login" class="logout ol-link">logout</router-link>
     </header>
 </template>
 
@@ -10,7 +10,11 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class AppHeader extends Vue {}
+export default class AppHeader extends Vue {
+    get navigation() {
+        return this.$route.meta.title;
+    }
+}
 </script>
 
 <style scoped lang="scss">
@@ -25,5 +29,8 @@ header {
     padding: 0 40px;
     background-color: $color-background-main;
     border-bottom: 1px solid $color-main-80;
+}
+.logout {
+    color: $color-main;
 }
 </style>

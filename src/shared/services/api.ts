@@ -1,24 +1,25 @@
 import axios from 'axios';
-import getMockData from '@shared/mock/mock';
+import getMockData, { timeout } from '@shared/mock/mock';
 
-// ApiService used to switch between mock and server data
+// ApiService used only to switch between mock and server data
 export class ApiService {
     isMockData: boolean = true;
 
-    async get(url: string, id?: number) {
-        const response = this.isMockData ? getMockData(url, id) : await axios.get(url);
-        return response;
+    async get(url: string) {
+        return this.isMockData ? await getMockData(url) : await axios.get(url);
     }
 
-    post(url: string, data: any) {
-        console.log('post');
+    async post(url: string, data: any) {
+        const response = this.isMockData ? await getMockData(url) : await axios.post(url);
+        return response || data;
     }
 
-    put(url: string, data: any) {
-        console.log('put');
+    async put(url: string, data: any) {
+        const response = this.isMockData ? await timeout() : await axios.put(url);
+        return this.isMockData ? data : response;
     }
 
-    delete(url: string, id: number) {
-        console.log('delete');
+    async delete(url: string) {
+        this.isMockData ? await timeout() : await axios.delete(url);
     }
 }
