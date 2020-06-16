@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex, { ModuleTree } from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
 import moduleAuth from '@auth/store';
 import moduleCommon from '@common/store';
@@ -24,5 +25,6 @@ export default new Vuex.Store({
         ...moduleBilling,
         ...moduleSettings,
         layout
-    } as ModuleTree<any> //FIXME: any
+    },
+    plugins: [createPersistedState({ paths: ['layout', 'auth'] })]
 });
