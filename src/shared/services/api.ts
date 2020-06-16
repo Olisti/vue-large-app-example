@@ -3,7 +3,7 @@ import getMockData, { timeout } from '@shared/mock/mock';
 
 // ApiService used only to switch between mock and server data
 export class ApiService {
-    isMockData: boolean = false;
+    isMockData: boolean = true;
 
     async get(url: string) {
         return this.isMockData ? await getMockData(url) : await axios.get(url);
