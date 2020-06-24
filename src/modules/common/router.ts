@@ -12,7 +12,7 @@ export default [
         name: 'not-found',
         component: () => import(/* webpackChunkName: "not-found" */ '@common/pages/404/_index.vue'),
         meta: {
-            title: '404'
+            title: 'Page not found'
         }
     }
 ];

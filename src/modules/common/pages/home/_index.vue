@@ -27,11 +27,11 @@ export default class Home extends Vue {}
     flex-direction: column;
     align-items: center;
     &__title {
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 24px;
-        color: $color-main-20;
         margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $color-main-20;
     }
     &__link {
         display: flex;

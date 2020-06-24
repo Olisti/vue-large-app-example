@@ -32,6 +32,7 @@ header {
     padding: 0 40px;
     background-color: $color-background-main;
     border-bottom: 1px solid $color-main-80;
+    cursor: default;
 }
 .logout {
     color: $color-main;
