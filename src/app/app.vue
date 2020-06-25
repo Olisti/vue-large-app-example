@@ -40,7 +40,7 @@ export default class App extends Vue {
     }
     &__router {
         flex: 1;
-        padding: 20px 40px;
+        padding: 30px 40px;
     }
 }
 </style>

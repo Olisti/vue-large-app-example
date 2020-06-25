@@ -41,6 +41,8 @@ export default class Home extends Vue {}
     &__logo {
         height: 150px;
         max-width: 150px;
+        opacity: 0.8;
+        filter: invert(64%) sepia(45%) saturate(7006%) hue-rotate(209deg) brightness(96%) contrast(85%);
     }
 }
 </style>
