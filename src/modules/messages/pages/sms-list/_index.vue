@@ -1,14 +1,24 @@
 <template>
     <div>
-        SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />
+        SmsList
+        {{sms}}
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mapGetters } from 'vuex';
 
-@Component
-export default class SmsList extends Vue {}
+@Component({
+    computed: {
+        ...mapGetters({ sms: 'sms/SMS' })
+    }
+})
+export default class SmsList extends Vue {
+    mounted() {
+        this.$store.dispatch('sms/LIST');
+    }
+}
 </script>
 
 <style scoped lang="scss"></style>

@@ -1,9 +1,7 @@
 import { Module } from 'vuex';
 import { RootState } from '@/app/store';
-import { ApiService } from '@/shared/services/api';
+import { apiService } from '@/shared/services/api';
 import router from '@/app/router';
-
-const apiService = new ApiService();
 
 export interface State {
     token: string | null;
