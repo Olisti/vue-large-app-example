@@ -6,5 +6,13 @@ export default [
         meta: {
             title: 'Billing'
         }
+    },
+    {
+        path: '/payment',
+        name: 'payment',
+        component: () => import(/* webpackChunkName: "payment" */ '@billing/pages/payment/_index.vue'),
+        meta: {
+            title: 'Payment'
+        }
     }
 ];

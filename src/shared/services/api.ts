@@ -23,3 +23,5 @@ export class ApiService {
         this.isMockData ? await timeout() : await axios.delete(url);
     }
 }
+
+export const apiService = new ApiService();

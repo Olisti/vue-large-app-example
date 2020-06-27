@@ -1,14 +1,25 @@
 <template>
     <div>
-        SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />SmsList<br />
+        <sms-table :data="sms" />
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mapGetters } from 'vuex';
+import SmsTable from './sms-table.vue';
 
-@Component
-export default class SmsList extends Vue {}
+@Component({
+    components: { SmsTable },
+    computed: {
+        ...mapGetters({ sms: 'sms/SMS' })
+    }
+})
+export default class SmsList extends Vue {
+    mounted() {
+        this.$store.dispatch('sms/LIST');
+    }
+}
 </script>
 
 <style scoped lang="scss"></style>

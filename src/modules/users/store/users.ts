@@ -1,8 +1,6 @@
 import { Module } from 'vuex';
 import { RootState } from '@/app/store';
-import { ApiService } from '@/shared/services/api';
-
-const apiService = new ApiService();
+import { apiService } from '@/shared/services/api';
 
 export interface User {
     id?: number;
