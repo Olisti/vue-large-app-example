@@ -1,15 +1,16 @@
 <template>
     <div>
-        SmsList
-        {{sms}}
+        <sms-table :data="sms" />
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
+import SmsTable from './sms-table.vue';
 
 @Component({
+    components: { SmsTable },
     computed: {
         ...mapGetters({ sms: 'sms/SMS' })
     }

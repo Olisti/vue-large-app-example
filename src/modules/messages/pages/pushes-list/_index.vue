@@ -1,15 +1,16 @@
 <template>
     <div>
-        PushesList
-        {{pushes}}
+        <pushes-table :data="pushes" />
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
+import PushesTable from './pushes-table.vue';
 
 @Component({
+    components: { PushesTable },
     computed: {
         ...mapGetters({ pushes: 'pushes/PUSHES' })
     }

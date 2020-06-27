@@ -25,9 +25,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mapGetters } from 'vuex';
 import { ElForm } from 'element-ui/types/form';
 import AuthCard from '@auth/components/auth-card.vue';
-import { mapGetters } from 'vuex';
 
 @Component({
     components: { AuthCard },

@@ -21,8 +21,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import AuthCard from '@auth/components/auth-card.vue';
 import { ElForm } from 'element-ui/types/form';
+import AuthCard from '@auth/components/auth-card.vue';
 
 @Component({
     components: { AuthCard }

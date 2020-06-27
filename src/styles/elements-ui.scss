@@ -12,9 +12,9 @@ $--color-text-secondary: $color-main-50;
 $--color-text-placeholder: $color-main-70;
 
 // FIXME:
-$--border-color-base: $color-main-50;
+$--border-color-base: red; //  $color-main-50;
 $--border-color-light: blue;
-$--border-color-lighter: $color-main-70;
+$--border-color-lighter: $color-main-80;
 $--border-color-extra-light: purple;
 
 /* icon font path, required */
@@ -23,7 +23,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 @import '~element-ui/packages/theme-chalk/src/index';
 
 .el-menu {
-    border-color: $color-main-80;
+    border-color: $color-main-70;
 }
 .el-submenu .el-menu-item {
     min-width: initial;

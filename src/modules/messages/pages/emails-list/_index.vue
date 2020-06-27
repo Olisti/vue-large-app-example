@@ -1,15 +1,16 @@
 <template>
     <div>
-        EmailsList
-        {{emails}}
+        <emails-table :data="emails" />
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
+import EmailsTable from './emails-table.vue';
 
 @Component({
+    components: { EmailsTable },
     computed: {
         ...mapGetters({ emails: 'emails/EMAILS' })
     }
