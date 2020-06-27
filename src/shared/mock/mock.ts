@@ -1,5 +1,6 @@
 import users from './users.json';
 import user from './users.json';
+import usersStatistics from './users-statistics.json';
 import emails from './emails.json';
 import pushes from './pushes.json';
 import sms from './sms.json';
@@ -9,6 +10,7 @@ export default async function getMockData(url: string, id?: number) {
     await timeout();
     if (url.startsWith('auth/')) return { token: 'c84f18a2-c6c7-4850-be15-93f9cbaef3b3' };
     else if (url === 'users' && !id) return users;
+    else if (url.startsWith('users/statistics')) return usersStatistics;
     else if (url.startsWith('users/')) return user;
     else if (url === 'messages/emails') return emails;
     else if (url === 'messages/pushes') return pushes;
