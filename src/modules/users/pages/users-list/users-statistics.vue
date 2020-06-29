@@ -1,18 +1,28 @@
 <template>
-    <div class="statistics">
-        <div class="statistics__item">
-            <el-progress type="circle" :percentage="statistics.emails"></el-progress>
-            <div class="statistics__title">Emails</div>
+    <el-popover
+        placement="bottom"
+        title="Statistics"
+        width="500"
+        trigger="hover"
+        @after-enter="visible = true"
+        @after-leave="visible = false"
+    >
+        <div class="statistics">
+            <div class="statistics__item">
+                <el-progress type="circle" :percentage="visible ? statistics.emails : 0"></el-progress>
+                <div class="statistics__title">Emails</div>
+            </div>
+            <div class="statistics__item">
+                <el-progress type="circle" :percentage="visible ? statistics.pushes : 0"></el-progress>
+                <div class="statistics__title">Push subscriptions</div>
+            </div>
+            <div class="statistics__item">
+                <el-progress type="circle" :percentage="visible ? statistics.phones : 0"></el-progress>
+                <div class="statistics__title">Phones</div>
+            </div>
         </div>
-        <div class="statistics__item">
-            <el-progress type="circle" :percentage="statistics.pushes"></el-progress>
-            <div class="statistics__title">Push subscriptions</div>
-        </div>
-        <div class="statistics__item">
-            <el-progress type="circle" :percentage="statistics.phones"></el-progress>
-            <div class="statistics__title">Phones</div>
-        </div>
-    </div>
+        <el-button slot="reference">See some statistics</el-button>
+    </el-popover>
 </template>
 
 <script lang="ts">
@@ -25,6 +35,7 @@ import { mapGetters } from 'vuex';
     }
 })
 export default class UserStatistics extends Vue {
+    visible = false;
     mounted() {
         this.$store.dispatch('usersStatistics/GET');
     }
@@ -35,7 +46,6 @@ export default class UserStatistics extends Vue {
 .statistics {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
     &__item {
         display: flex;
         flex-direction: column;
@@ -45,5 +55,12 @@ export default class UserStatistics extends Vue {
     &__title {
         margin-top: 10px;
     }
+}
+</style>
+
+<style  lang="scss">
+@import '~@/styles/variables';
+.statistics .el-progress-circle__path {
+    stroke: $color-secondary;
 }
 </style>

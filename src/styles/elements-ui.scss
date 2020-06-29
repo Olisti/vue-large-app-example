@@ -9,10 +9,10 @@ $--color-info: $color-main-50;
 $--color-text-regular: $color-main;
 $--color-text-primary: $color-main;
 $--color-text-secondary: $color-main-50;
-$--color-text-placeholder: $color-main-70;
+$--color-text-placeholder: $color-main-10;
 
 // FIXME:
-$--border-color-base: red; //  $color-main-50;
+$--border-color-base: $color-main-70; //  $color-main-50;
 $--border-color-light: blue;
 $--border-color-lighter: $color-main-80;
 $--border-color-extra-light: purple;

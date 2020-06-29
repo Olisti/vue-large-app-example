@@ -1,7 +1,7 @@
 <template>
     <div>
-        <users-statistics />
-        {{ users }}
+            <users-statistics />
+        </div>
         <div class="users">
             <user-card v-for="(user, index) in users" :key="index" :user="user" />
         </div>
