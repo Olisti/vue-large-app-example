@@ -2,67 +2,9 @@
     <div>
         <users-statistics />
         {{ users }}
-        <router-link to="/users/create">UsersMaker</router-link>
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />UsersList
-        <br />
+        <div class="users">
+            <user-card v-for="(user, index) in users" :key="index" :user="user" />
+        </div>
     </div>
 </template>
 
@@ -74,10 +16,7 @@ import UserCard from './user-card.vue';
 import UsersStatistics from './users-statistics.vue';
 
 @Component({
-    components: { UserCard, UsersStatistics },
-    computed: {
-        ...mapGetters({ users: 'users/USERS' })
-    }
+    components: { UserCard, UsersStatistics }
 })
 export default class UsersList extends Vue {
     mounted() {
@@ -86,4 +25,11 @@ export default class UsersList extends Vue {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.users {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    column-gap: 40px;
+    row-gap: 20px;
+}
+</style>
