@@ -14,10 +14,10 @@
             <span style="flex: 1" />
             <users-statistics />
         </div>
-        <div class="users">
+        <div v-if="users.length" class="users">
             <user-card v-for="(user, index) in users" :key="index" :user="user" />
-            <!-- TODO: empty data -->
         </div>
+        <empty-data v-else :loading="loading" title="Users not found" />
     </div>
 </template>
 
@@ -27,9 +27,13 @@ import { mapGetters } from 'vuex';
 
 import UserCard from './user-card.vue';
 import UsersStatistics from './users-statistics.vue';
+import EmptyData from '@shared/components/empty-data.vue';
 
 @Component({
-    components: { UserCard, UsersStatistics }
+    components: { UserCard, UsersStatistics, EmptyData },
+    computed: {
+        ...mapGetters({ loading: 'users/LOADING' })
+    }
 })
 export default class UsersList extends Vue {
     search: string = '';
