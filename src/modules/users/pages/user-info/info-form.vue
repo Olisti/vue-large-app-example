@@ -26,11 +26,6 @@ import { User } from '../../store/users';
 @Component
 export default class UserInfoForm extends Vue {
     @Prop() user!: User;
-    params = [{ name: '', key: '' }];
-    // Name
-    // Email
-    // Job
-    // Language
 }
 </script>
 
