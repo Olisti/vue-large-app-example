@@ -1,5 +1,5 @@
   <template>
-    <el-table :data="data" border style="width: 100%">
+    <el-table :data="data" v-loading="loading" :lazy="true" border style="width: 100%">
         <el-table-column prop="id" label="ID" width="100"></el-table-column>
         <el-table-column prop="name" label="Name" sortable></el-table-column>
         <el-table-column prop="send" label="Sent" width="150"></el-table-column>
@@ -15,6 +15,7 @@ import { Sms } from '../../store/sms';
 @Component
 export default class SmsTable extends Vue {
     @Prop() data!: Sms[];
+    @Prop() loading!: boolean;
 }
 </script>
 

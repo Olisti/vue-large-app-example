@@ -1,6 +1,6 @@
 <template>
     <div>
-        <pushes-table :data="pushes" />
+        <pushes-table :data="pushes" :loading="loading" />
     </div>
 </template>
 
@@ -12,7 +12,10 @@ import PushesTable from './pushes-table.vue';
 @Component({
     components: { PushesTable },
     computed: {
-        ...mapGetters({ pushes: 'pushes/PUSHES' })
+        ...mapGetters({
+            pushes: 'pushes/PUSHES',
+            loading: 'pushes/LOADING'
+        })
     }
 })
 export default class PushesList extends Vue {

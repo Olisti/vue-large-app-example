@@ -1,6 +1,6 @@
 <template>
     <div>
-        <emails-table :data="emails" />
+        <emails-table :data="emails" :loading="loading" />
     </div>
 </template>
 
@@ -12,7 +12,10 @@ import EmailsTable from './emails-table.vue';
 @Component({
     components: { EmailsTable },
     computed: {
-        ...mapGetters({ emails: 'emails/EMAILS' })
+        ...mapGetters({
+            emails: 'emails/EMAILS',
+            loading: 'emails/LOADING'
+        })
     }
 })
 export default class EmailsList extends Vue {

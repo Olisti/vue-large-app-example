@@ -1,6 +1,6 @@
 <template>
     <div>
-        <sms-table :data="sms" />
+        <sms-table :data="sms" :loading="loading" />
     </div>
 </template>
 
@@ -12,7 +12,10 @@ import SmsTable from './sms-table.vue';
 @Component({
     components: { SmsTable },
     computed: {
-        ...mapGetters({ sms: 'sms/SMS' })
+        ...mapGetters({
+            sms: 'sms/SMS',
+            loading: 'sms/LOADING'
+        })
     }
 })
 export default class SmsList extends Vue {
