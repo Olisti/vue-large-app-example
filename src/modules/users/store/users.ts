@@ -27,7 +27,8 @@ export default {
     getters: {
         LOADING: (state: State) => state.loading,
         USERS: (state: State) => (search: string) =>
-            state.users.filter(user => `${user.firstName} ${user.lastName}`.includes(search))
+            state.users.filter(user => `${user.firstName} ${user.lastName}`.includes(search)),
+        USER: (state: State) => (id: number) => state.users.find(user => user.id === id)
     },
     actions: {
         LIST: async ({ commit, state }) => {
