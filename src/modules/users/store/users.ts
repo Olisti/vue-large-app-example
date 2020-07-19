@@ -32,6 +32,7 @@ export default {
     },
     actions: {
         LIST: async ({ commit, state }) => {
+            if (state.users.length) return;
             commit('SET_LOADING', true);
             const response = await apiService.get(`users`);
             commit('SET', response);
@@ -49,10 +50,10 @@ export default {
             commit('ADD', response);
             commit('SET_LOADING', false);
         },
-        UPDATE: async ({ commit, state }, user: User) => {
+        EDIT: async ({ commit, state }, user: User) => {
             commit('SET_LOADING', true);
             const response = await apiService.put(`users/${user.id}`, user);
-            commit('ADD', response);
+            commit('UPDATE', response);
             commit('SET_LOADING', false);
         },
         DELETE: async ({ commit, state }, id: number) => {
@@ -68,12 +69,22 @@ export default {
         },
         ADD: (state, payload: User) => {
             const index = state.users.findIndex(user => user.id === payload.id);
-            if (index >= 0)
-                state.users.splice(index, 1, {
-                    ...state.users[index],
-                    ...payload
-                });
-            else state.users.push(payload);
+            console.log('payload', payload);
+            state.users.push({
+                ...payload,
+                id:
+                    payload.id ||
+                    state.users.reduce((maxIndex, item) => {
+                        return item.id >= maxIndex ? item.id + 1 : maxIndex;
+                    }, 0)
+            });
+        },
+        UPDATE: (state, payload: User) => {
+            const index = state.users.findIndex(user => user.id === payload.id);
+            state.users.splice(index, 1, {
+                ...state.users[index],
+                ...payload
+            });
         },
         REMOVE: (state, id: number) => {
             const index = state.users.findIndex(user => user.id === id);

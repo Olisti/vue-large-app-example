@@ -6,11 +6,11 @@ export class ApiService {
     isMockData: boolean = true;
 
     async get(url: string) {
-        return this.isMockData ? await getMockData(url) : await axios.get(url);
+        return this.isMockData ? await getMockData(url, 'get') : await axios.get(url);
     }
 
     async post(url: string, data: any) {
-        const response = this.isMockData ? await getMockData(url) : await axios.post(url);
+        const response = this.isMockData ? await getMockData(url, 'post') : await axios.post(url);
         return response || data;
     }
 
