@@ -9,7 +9,7 @@
             cancelButtonText="No"
             @onConfirm="$emit('deleteUser', id)"
         >
-            <el-button slot="reference" icon="el-icon-delete">Delete</el-button>
+            <el-button :loading="loading" slot="reference" icon="el-icon-delete">Delete</el-button>
         </el-popconfirm>
     </div>
 </template>
@@ -21,6 +21,7 @@ import { User } from '../../store/users';
 @Component
 export default class UserInfoTools extends Vue {
     @Prop() id!: number;
+    @Prop() loading!: boolean;
 }
 </script>
 

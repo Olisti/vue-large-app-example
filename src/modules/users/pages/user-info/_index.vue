@@ -5,7 +5,7 @@
             <div class="user-info__title">User Info</div>
             <info-form :user="user" />
             <span style="flex: 1" />
-            <info-tools :id="id" @deleteUser="deleteUser" />
+            <info-tools :id="id" :loading="loading" @deleteUser="deleteUser" />
         </div>
         <router-link to="/users/list">
             <el-button type="info" icon="el-icon-back">Back to users list</el-button>
@@ -17,8 +17,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import InfoForm from './info-form.vue';
 import InfoTools from './info-tools.vue';
+import { mapGetters } from 'vuex';
 
-@Component({ components: { InfoForm, InfoTools } })
+@Component({
+    components: { InfoForm, InfoTools },
+    computed: { ...mapGetters({ loading: 'users/LOADING' }) }
+})
 export default class UserInfo extends Vue {
     get id() {
         return +this.$route.params?.id || 0;
