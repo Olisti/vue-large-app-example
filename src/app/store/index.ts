@@ -31,5 +31,5 @@ export default new Vuex.Store({
             Object.keys(state).map((module: string) => (state[module].loading = false));
         }
     },
-    plugins: [createPersistedState({ paths: ['layout', 'auth'] })]
+    plugins: [createPersistedState({ paths: ['layout', 'auth', 'users'] })] // delete 'users' if real data is used
 });

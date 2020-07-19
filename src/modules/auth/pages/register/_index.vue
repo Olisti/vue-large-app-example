@@ -17,7 +17,12 @@
             <el-form-item label="Password" prop="password">
                 <el-input v-model="form.password" type="password" autocomplete="off"></el-input>
             </el-form-item>
-            <el-button class="auth__submit" type="primary" :loading="loading" @click="submitForm()">Register</el-button>
+            <el-button
+                class="auth__submit"
+                type="primary"
+                :loading="loading"
+                @click="submitForm()"
+            >Register</el-button>
             <div class="auth__links">
                 <router-link to="/login" class="ol-link">Back to login</router-link>
             </div>
