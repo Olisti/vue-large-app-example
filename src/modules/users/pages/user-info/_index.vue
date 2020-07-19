@@ -31,8 +31,8 @@ export default class UserInfo extends Vue {
         return this.$store.getters['users/USER'](this.id) || {};
     }
     mounted() {
-        // this.$store.dispatch('users/GET', this.id);
-        this.$store.dispatch('users/LIST');
+        this.$store.dispatch('users/GET', this.id);
+        // this.$store.dispatch('users/LIST');
     }
     getQualityImage(imageUrl: string) {
         return imageUrl?.replace('size=100x100', 'size=300x300');

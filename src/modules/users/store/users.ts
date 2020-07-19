@@ -39,6 +39,7 @@ export default {
             commit('SET_LOADING', false);
         },
         GET: async ({ commit, state }, id: number) => {
+            if (state.users.find(user => user.id === id)) return;
             commit('SET_LOADING', true);
             const response = await apiService.get(`users/${id}`);
             commit('ADD', response);
@@ -69,7 +70,6 @@ export default {
         },
         ADD: (state, payload: User) => {
             const index = state.users.findIndex(user => user.id === payload.id);
-            console.log('payload', payload);
             state.users.push({
                 ...payload,
                 id:

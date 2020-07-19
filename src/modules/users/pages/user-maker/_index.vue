@@ -8,7 +8,11 @@
     >
         <user-form :user="user" />
         <el-form-item class="maker__submit">
-            <el-button type="primary" @click="submit" :loading="loading">Create</el-button>
+            <el-button
+                type="primary"
+                @click="submit"
+                :loading="loading"
+            >{{this.isEditMode ? 'Edit' : 'Create'}}</el-button>
             <el-button>Cancel</el-button>
         </el-form-item>
     </el-form>
@@ -29,19 +33,36 @@ import UserForm from './user-form.vue';
 })
 export default class UserMaker extends Vue {
     user: Partial<User> = {
-        firstName: 'sdf',
-        lastName: 'sfd',
-        email: 'sdfsfd@dfssdf.sdf',
+        firstName: '',
+        lastName: '',
+        email: '',
         avatar: 'https://robohash.org/quoetsoluta.jpg?size=100x100&set=set1',
         gender: 'Male',
-        job: 'sdf',
-        language: 'sfd'
+        job: '',
+        language: ''
     };
+    isEditMode: boolean = false;
+
+    mounted() {
+        const id = this.$route.params?.id;
+        if (id) {
+            this.isEditMode = true;
+            this.setUser(+id);
+        }
+    }
+
+    setUser(id: number) {
+        const user = this.$store.getters['users/USER'](id);
+        this.user = {
+            ...this.user,
+            ...user
+        };
+    }
 
     async submit() {
         (this.$refs['makerForm'] as ElForm).validate(async (valid: boolean) => {
             if (valid) {
-                await this.$store.dispatch('users/CREATE', this.user);
+                await this.$store.dispatch(this.isEditMode ? 'users/EDIT' : 'users/CREATE', this.user);
                 this.$router.push({
                     name: 'users-list'
                 });
