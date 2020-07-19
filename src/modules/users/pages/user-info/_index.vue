@@ -42,16 +42,18 @@ export default class UserInfo extends Vue {
 
 <style scoped lang="scss">
 @import '~@/styles/variables';
+@import '~@/styles/elements-ui';
 .user-info {
     display: grid;
     grid-gap: 40px;
     grid-template-columns: auto 1fr;
     &__avatar {
-        min-width: 340px;
-        min-height: 340px;
+        min-width: 342px;
+        min-height: 342px;
+        padding: 20px;
         background-color: $color-background-main;
-        border: solid 20px $color-background-main;
         border-radius: 50%;
+        border: 1px solid $--border-color-lighter;
     }
     &__info {
         display: flex;
@@ -60,6 +62,7 @@ export default class UserInfo extends Vue {
         padding: 20px;
         border-radius: 6px;
         background-color: $color-background-main;
+        border: 1px solid $--border-color-lighter;
     }
     &__title {
         text-transform: uppercase;

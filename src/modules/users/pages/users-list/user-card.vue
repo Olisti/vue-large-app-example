@@ -20,6 +20,7 @@ export default class UserCard extends Vue {
 
 <style scoped lang="scss">
 @import '~@/styles/variables';
+@import '~@/styles/elements-ui';
 .user {
     display: flex;
     flex-direction: column;
@@ -41,6 +42,7 @@ export default class UserCard extends Vue {
         padding: 40px 20px 20px;
         border-radius: 6px;
         background-color: $color-background-main;
+        border: 1px solid $--border-color-lighter;
     }
     &__id {
         margin-right: 10px;

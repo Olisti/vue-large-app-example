@@ -36,3 +36,10 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 .el-input__clear::before {
     content: '\e6db';
 }
+// .el-button .el-loading-mask {
+//     border-radius: 3px;
+//     opacity: 0.9;
+//     & .el-loading-spinner {
+//         transform: scale(0.75);
+//     }
+// }
