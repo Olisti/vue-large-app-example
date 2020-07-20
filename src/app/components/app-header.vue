@@ -2,6 +2,13 @@
     <header>
         <span>{{ navigation }}</span>
         <span style="flex: 1" />
+        <el-switch
+            class="themes"
+            :value="isDarkTheme"
+            inactive-text="☀️"
+            active-text="🌑"
+            @change="$emit('switchTheme')"
+        ></el-switch>
         <router-link to="/login" class="logout ol-link">
             <i class="el-icon-switch-button" />&nbsp;
             <span>Logout</span>
@@ -10,10 +17,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
 export default class AppHeader extends Vue {
+    @Prop() isDarkTheme!: boolean;
+
     get navigation() {
         return this.$route.meta.title;
     }
@@ -35,6 +44,9 @@ header {
     border-bottom: 1px solid $color-main-70;
     cursor: default;
     z-index: 1000;
+}
+.themes {
+    margin: 0 40px;
 }
 .logout {
     color: $color-main;

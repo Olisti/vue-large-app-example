@@ -1,0 +1,56 @@
+$color-background-main-light: #ffffff;
+$color-background-main-dark: #404559;
+$color-background-secondary-light: #f4f6ff;
+$color-background-secondary-dark: #31364a;
+$color-main-light: #4b5883;
+$color-main-dark: #f4f6ff;
+
+$color-primary: #657ee4;
+$color-secondary: #56c1df;
+$color-success: #49bd5a;
+$color-warning: #f0a74e;
+$color-danger: #e86478;
+
+.light-theme {
+    --color-background-main: #{$color-background-main-light};
+    --color-background-secondary: #{$color-background-secondary-light};
+    --color-main: #{$color-main-light};
+    --color-main-10: mix(--color-background-main, --color-main, 10%);
+    --color-main-20: mix(--color-background-main, --color-main, 20%);
+    --color-main-30: mix(--color-background-main, --color-main, 30%);
+    --color-main-40: mix(--color-background-main, --color-main, 40%);
+    --color-main-50: mix(--color-background-main, --color-main, 50%);
+    --color-main-60: mix(--color-background-main, --color-main, 60%);
+    --color-main-70: mix(--color-background-main, --color-main, 70%);
+    --color-main-80: mix(--color-background-main, --color-main, 80%);
+    --color-main-90: mix(--color-background-main, --color-main, 90%);
+}
+
+.dark-theme {
+    --color-background-main: #{$color-background-main-dark};
+    --color-background-secondary: #{$color-background-secondary-dark};
+    --color-main: #{$color-main-dark};
+    --color-main-10: mix(--color-background-main, --color-main, 10%);
+    --color-main-20: mix(--color-background-main, --color-main, 20%);
+    --color-main-30: mix(--color-background-main, --color-main, 30%);
+    --color-main-40: mix(--color-background-main, --color-main, 40%);
+    --color-main-50: mix(--color-background-main, --color-main, 50%);
+    --color-main-60: mix(--color-background-main, --color-main, 60%);
+    --color-main-70: mix(--color-background-main, --color-main, 70%);
+    --color-main-80: mix(--color-background-main, --color-main, 80%);
+    --color-main-90: mix(--color-background-main, --color-main, 90%);
+}
+
+$color-background-main: var(--color-background-main);
+$color-background-secondary: var(--color-background-secondary);
+
+$color-main: var(--color-main);
+$color-main-10: var(--color-main-10);
+$color-main-20: var(--color-main-20);
+$color-main-30: var(--color-main-30);
+$color-main-40: var(--color-main-40);
+$color-main-50: var(--color-main-50);
+$color-main-60: var(--color-main-60);
+$color-main-70: var(--color-main-70);
+$color-main-80: var(--color-main-80);
+$color-main-90: var(--color-main-90);

@@ -1,19 +1,21 @@
-$color-background-main: #ffffff;
-$color-background-secondary: #f4f6ff; // #f6f8fe;
+@import './colors.scss';
 
-$color-primary: #657ee4;
-$color-secondary: #56c1df;
-$color-success: #49bd5a;
-$color-warning: #f0a74e;
-$color-danger: #e86478;
+// $color-background-main: #ffffff;
+// $color-background-secondary: #f4f6ff; // #f6f8fe;
 
-$color-main: #4b5883;
-$color-main-10: scale-color($color-main, $lightness: 10%);
-$color-main-20: scale-color($color-main, $lightness: 20%);
-$color-main-30: scale-color($color-main, $lightness: 30%);
-$color-main-40: scale-color($color-main, $lightness: 40%);
-$color-main-50: scale-color($color-main, $lightness: 50%);
-$color-main-60: scale-color($color-main, $lightness: 60%);
-$color-main-70: scale-color($color-main, $lightness: 70%);
-$color-main-80: scale-color($color-main, $lightness: 80%);
-$color-main-90: scale-color($color-main, $lightness: 90%);
+// $color-primary: #657ee4;
+// $color-secondary: #56c1df;
+// $color-success: #49bd5a;
+// $color-warning: #f0a74e;
+// $color-danger: #e86478;
+
+// $color-main: #4b5883;
+// $color-main-10: scale-color($color-main, $lightness: 10%);
+// $color-main-20: scale-color($color-main, $lightness: 20%);
+// $color-main-30: scale-color($color-main, $lightness: 30%);
+// $color-main-40: scale-color($color-main, $lightness: 40%);
+// $color-main-50: scale-color($color-main, $lightness: 50%);
+// $color-main-60: scale-color($color-main, $lightness: 60%);
+// $color-main-70: scale-color($color-main, $lightness: 70%);
+// $color-main-80: scale-color($color-main, $lightness: 80%);
+// $color-main-90: scale-color($color-main, $lightness: 90%);

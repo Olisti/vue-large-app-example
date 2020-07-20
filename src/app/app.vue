@@ -1,8 +1,8 @@
 <template>
-    <div id="app" class="app">
+    <div id="app" class="app" :class="[isDarkTheme ? 'dark-theme': 'light-theme']">
         <app-sidenav v-if="!isPublicPage"></app-sidenav>
         <div class="app__content">
-            <app-header v-if="!isPublicPage"></app-header>
+            <app-header v-if="!isPublicPage" :isDarkTheme="isDarkTheme" @switchTheme="switchTheme"></app-header>
             <div class="app__router">
                 <router-view />
             </div>
@@ -17,8 +17,13 @@ import { Component, Vue } from 'vue-property-decorator';
 import AppSidenav from './components/app-sidenav.vue';
 import AppHeader from './components/app-header.vue';
 import AppFooter from './components/app-footer.vue';
+import { mapGetters, mapMutations } from 'vuex';
 
-@Component({ components: { AppSidenav, AppHeader, AppFooter } })
+@Component({
+    components: { AppSidenav, AppHeader, AppFooter },
+    computed: { ...mapGetters({ isDarkTheme: 'layout/DARK_THEME' }) },
+    methods: { ...mapMutations({ switchTheme: 'layout/SWITCH_DARK_THEME' }) }
+})
 export default class App extends Vue {
     get isPublicPage(): boolean {
         return !!this.$route.meta.isPublic;

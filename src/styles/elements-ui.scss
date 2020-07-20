@@ -4,18 +4,20 @@ $--color-primary: $color-primary;
 $--color-success: $color-success;
 $--color-warning: $color-warning;
 $--color-danger: $color-danger;
-$--color-info: $color-main-50;
+// $--color-info: rgba(#{$color-main-50}, 1);
+// $--color-info-light: $color-main-60;
+// $--color-info-lighter: $color-main-70;
 
-$--color-text-regular: $color-main;
-$--color-text-primary: $color-main;
-$--color-text-secondary: $color-main-50;
-$--color-text-placeholder: $color-main-10;
+// $--color-text-regular: $color-main;
+// $--color-text-primary: $color-main;
+// $--color-text-secondary: $color-main-50;
+// $--color-text-placeholder: $color-main-10;
 
-// FIXME:
-$--border-color-base: $color-main-70; //  $color-main-50;
-$--border-color-light: blue;
-$--border-color-lighter: $color-main-80;
-$--border-color-extra-light: purple;
+// // FIXME:
+// $--border-color-base: $color-main-70; //  $color-main-50;
+// $--border-color-light: blue;
+// $--border-color-lighter: $color-main-80;
+// $--border-color-extra-light: purple;
 
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
