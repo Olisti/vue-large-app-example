@@ -1,6 +1,6 @@
 import { Module } from 'vuex';
 import { RootState } from '@/app/store';
-import { apiService } from '@/shared/services/api';
+import { apiService, isMockData } from '@/shared/services/api';
 
 export interface User {
     id: number;
@@ -32,14 +32,14 @@ export default {
     },
     actions: {
         LIST: async ({ commit, state }) => {
-            if (state.users.length) return;
+            if (isMockData && state.users.length) return;
             commit('SET_LOADING', true);
             const response = await apiService.get(`users`);
             commit('SET', response);
             commit('SET_LOADING', false);
         },
         GET: async ({ commit, state }, id: number) => {
-            if (state.users.find(user => user.id === id)) return;
+            if (isMockData && state.users.find(user => user.id === id)) return;
             commit('SET_LOADING', true);
             const response = await apiService.get(`users/${id}`);
             commit('ADD', response);

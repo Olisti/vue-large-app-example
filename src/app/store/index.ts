@@ -1,6 +1,7 @@
 import Vue from 'vue';
-import Vuex, { ModuleTree } from 'vuex';
+import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
+import { isMockData } from '@/shared/services/api';
 
 import moduleAuth from '@auth/store';
 import moduleCommon from '@common/store';
@@ -31,5 +32,5 @@ export default new Vuex.Store({
             Object.keys(state).map((module: string) => (state[module].loading = false));
         }
     },
-    plugins: [createPersistedState({ paths: ['layout', 'auth', 'users'] })] // delete 'users' if real data is used
+    plugins: [createPersistedState({ paths: ['layout', 'auth', ...(isMockData ? ['users'] : [])] })]
 });

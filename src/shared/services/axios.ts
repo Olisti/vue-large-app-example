@@ -2,7 +2,6 @@ import axios from 'axios';
 import store from '@/app/store';
 import { Notification } from 'element-ui';
 
-const isMockData: boolean = true;
 axios.interceptors.request.use(
     config => {
         const token = store.getters['auth/TOKEN'];
