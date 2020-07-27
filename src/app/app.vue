@@ -41,6 +41,7 @@ export default class App extends Vue {
     &__router {
         flex: 1;
         padding: 30px 40px;
+        min-width: 550px;
     }
 }
 </style>
