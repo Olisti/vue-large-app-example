@@ -1,6 +1,6 @@
 # Vue large app example
 
-This example may help you build your Vue application. \
+This example may helps you build your Vue application. \
 Demo https://olisti.github.io/vue-large-app-example
 
 ## Project setup
