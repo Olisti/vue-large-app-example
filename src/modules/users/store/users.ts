@@ -1,6 +1,7 @@
 import { Module } from 'vuex';
 import { RootState } from '@/app/store';
 import { apiService, isMockData } from '@/shared/services/api';
+import { Message } from 'element-ui';
 
 export interface User {
     id: number;
@@ -47,21 +48,36 @@ export default {
         },
         CREATE: async ({ commit, state }, user: User) => {
             commit('SET_LOADING', true);
-            const response = await apiService.post(`users`, user);
+            const response: User = await apiService.post(`users`, user);
             commit('ADD', response);
             commit('SET_LOADING', false);
+            Message.success({
+                showClose: true,
+                duration: 5000,
+                message: `User ${response.firstName} ${response.lastName} created successfully.`
+            });
         },
         EDIT: async ({ commit, state }, user: User) => {
             commit('SET_LOADING', true);
-            const response = await apiService.put(`users/${user.id}`, user);
+            const response: User = await apiService.put(`users/${user.id}`, user);
             commit('UPDATE', response);
             commit('SET_LOADING', false);
+            Message.success({
+                showClose: true,
+                duration: 5000,
+                message: `User ${response.firstName} ${response.lastName} edited successfully.`
+            });
         },
         DELETE: async ({ commit, state }, id: number) => {
             commit('SET_LOADING', true);
             await apiService.delete(`users/${id}`);
             commit('REMOVE', id);
             commit('SET_LOADING', false);
+            Message.success({
+                showClose: true,
+                duration: 5000,
+                message: `User ${id} deleted successfully.`
+            });
         }
     },
     mutations: {
